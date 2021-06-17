@@ -10,11 +10,11 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('public/plugins/fontawesome-free/css/all.min.css')}}">
     <!-- icheck bootstrap -->
-    <link rel="stylesheet" href="{{asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('public/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
+    <link rel="stylesheet" href="{{asset('public/dist/css/adminlte.min.css')}}">
 </head>
 
 <body class="hold-transition register-page">
@@ -39,7 +39,7 @@
 
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a href="{{asset('register')}}" class="h1"><b>Register</b>Form</a>
+                <a href="{{asset('public/register')}}" class="h1"><b>Register</b>Form</a>
             </div> 
             <div class="card-body">
                 <p class="login-box-msg">Register a new membership</p>
@@ -126,11 +126,11 @@
     <!-- /.register-box -->
 
     <!-- jQuery -->
-    <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('public/plugins/jquery/jquery.min.js')}}"></script>
     <!-- Bootstrap 4 -->
-    <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('public/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <!-- AdminLTE App -->
-    <script src="{{asset('dist/js/adminlte.min.js')}}"></script>
+    <script src="{{asset('public/dist/js/adminlte.min.js')}}"></script>
 </body>
 
 </html>

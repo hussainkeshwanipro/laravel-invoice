@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use PDF;
 use App\Models\Item;
 use App\Models\Invoice;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
-use PDF;
+
 class InvoiceController extends Controller
 {
     public function index()
@@ -296,7 +298,7 @@ class InvoiceController extends Controller
         </html>
        ';
 
-        $stylesheet = file_get_contents('style.css');
+        $stylesheet = file_get_contents('public/style.css');
         $mpdf->WriteHTML($stylesheet,\Mpdf\HTMLParserMode::HEADER_CSS);
         $mpdf->WriteHTML($html,\Mpdf\HTMLParserMode::HTML_BODY);
        
@@ -310,6 +312,22 @@ class InvoiceController extends Controller
     }
 
     
-    
+    public function piechart()
+    {
+        if(Auth::check())
+        {
+            return $inv = Invoice::leftJoin('invoices', 'items', 'items.invoice_id')
+                            ->get()
+                            ->groupby(function($val){
+                                return Carbon::parse($val->date)->format('M');
+               
+                         });
+          
+        }   
+        else
+        {
+            return redirect()->route('login')->with('error', 'Session Timeout Login Again');
+        }
+    }
 }
 
