@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Item;
 use App\Models\Invoice;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class ChartController extends Controller
@@ -41,8 +43,11 @@ class ChartController extends Controller
     public function amountchart()
     {
         if(Auth::check())
-        {
-            return view('chart.amount');
+        { 
+            
+            return $data;
+            
+            return view('chart.amount', compact('data'));
         }
         else
         {
